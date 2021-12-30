@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+        // Clousers
+        // printColor
+        // IIFE Expresión de función ejecutada inmediatamente
+        // ingles: inmediately invoc function expretion
+        (function() {
+            let color = 'green';
+            function printColor() {
+                console.log(color);
+            }
+            printColor();
+        })();
+        // printColor dentro de un iife
+
+        // Funciones que regresan funciones
+        function makeColorPrinter(color){
+            let colorMessage = 'the color is' + color;
+            return function(){
+                console.log(colorMessage);
+            }
+        }
+        let greenColorPrinter = makeColorPrinter('green');
+        console.log(greenColorPrinter());
+
+        // variables "privadas"
+            // se puede leer y no queremos eso
+            // const counter = {
+            //     count: 3
+            // }
+            // console.log(counter.count);
+        
+        // de esta forma no exponemos count
+        function makeCounter(n){
+            let count = n;
+            return {
+                increase: function(){count ++},
+                decrease: function(){count --},
+                getCount: function(){return count}
+            }
+        }
+        let counter = makeCounter(7);
+        console.log(counter.getCount());
+    </script>
+</body>
+</html>

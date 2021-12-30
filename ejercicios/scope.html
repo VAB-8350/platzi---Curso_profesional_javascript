@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+        // Global Scope
+        var message = 'Hello, Platzi!';
+        var $ = function(mssages) {
+            console.log('Say:', mssages);
+        }
+        // Funcion Scope
+        function printNumbers() {
+            for (var i = 0; i < 10; i++){
+                function eventuallyPrintNumbers(n) {
+                    setTimeout(function(){
+                        console.log(n)
+                    },100);
+                }
+                eventuallyPrintNumbers(i);
+            }
+        }
+        function printNumbers2() {
+            for (let i = 0; i < 10; i++){
+                setTimeout(function(){
+                    console.log(i)
+                },100);
+            }
+        }
+        // Block Scope
+        // Module Scope
+    </script>
+</body>
+</html>
