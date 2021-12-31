@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <a style="color: aqua;" href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+        // Un objeto comun y corriente
+        // // // const Batman = {
+        // // //     name: 'Batman',
+        // // // };
+        // // // Batman.saludar = function(){
+        // // //     console.log('hola soy', this.name);
+        // // // }
+        // // // Batman.saludar();
+
+        // // // const Superman = {
+        // // //     name: 'Superman',
+        // // // };
+        // // // Superman.saludar = function(){
+        // // //     console.log('hola soy', this.name);
+        // // // }
+        // // // Superman.saludar();
+
+
+
+
+        // Seamos un poco mas eficientes que el codigo anterior
+        // // // function Hero(name){
+        // // //     const hero = {
+        // // //         name:name
+        // // //     }
+        // // //     hero.saludar = function(){
+        // // //         console.log('hola soy', this.name);
+        // // //     }
+        // // //     return hero;
+        // // // }
+
+        // // // const batman = Hero('Batman');
+        // // // batman.saludar();
+
+        // // // const superman = Hero('Superman');
+        // // // superman.saludar();
+
+
+
+        // Aun podemos mejorer mas y evitar tener que crear la misma funcion cada vez
+        // // // const heroMethods = {
+        // // //     saludar: function(){
+        // // //         console.log('I am', this.name);
+        // // //     },
+        // // // };
+        // // // function Hero(name){
+        // // //     const hero = {
+        // // //         name: name,
+        // // //     };
+        // // //     hero.saludar = heroMethods.saludar;
+            
+        // // //     return hero;
+        // // // }
+
+        // // // const batman = Hero('Batman');
+        // // // batman.saludar();
+
+        // // // const superman = Hero('Superman');
+        // // // superman.saludar();
+
+
+
+        // Una mejor forma de hacerlo "object.create"
+        // const nuevoObj = Object.create(objeto)
+        // // // const heroMethods = {
+        // // //     saludar: function(){
+        // // //         console.log('mi nombre es', this.name);
+        // // //     },
+        // // // };
+        // // // function Hero(name){
+        // // //     const hero = Object.create(heroMethods);
+        // // //     hero.name = name;
+
+        // // //     return hero;
+        // // // }
+
+        // // // const batman = Hero('Batman');
+        // // // batman.saludar();
+
+        // // // const superman = Hero('Superman');
+        // // // superman.saludar();
+
+
+
+        // Los metodos de hero dentro de Hero
+        // // const heroMethods = {
+        // //     saludar: function(){
+        // //         console.log('mi nombre es', this.name);
+        // //     },
+        // // };
+        function Hero(name){
+            //const hero = Object.create(Hero.prototype);
+            this.name = name;
+            return this;
+        }
+
+        Hero.prototype.saludar = function(){
+            console.log('new heroe:', this.name);
+        }
+
+        const batman = new Hero('Batman');
+        batman.saludar();
+
+        const superman = new Hero('Superman');
+        superman.saludar();
+
+
+
+
+        // nwe es un atajo (azucar sintactica) para llevar Hero.prototype al objeto
+        
+    </script>
+</body>
+</html>
