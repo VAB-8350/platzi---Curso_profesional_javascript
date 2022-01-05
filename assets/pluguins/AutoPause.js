@@ -14,7 +14,7 @@ class AutoPause{
   }
   handleIntersecrion(entries){
     const entry = entries[0];
-    const isVisible = entry.intersectionRatio >= this.threshold
+    const isVisible = entry.intersectionRatio >= this.threshold;
     isVisible ? this.player.play() : this.player.pause();
   }
   handleVisibilityChange() {
