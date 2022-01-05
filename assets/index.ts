@@ -1,11 +1,11 @@
-import MediaPlayer from "./MediaPlayer.js";
-import AutoPlay from './pluguins/AutoPlay.js';
-import AutoPause from './pluguins/AutoPause.ts';
+import MediaPlayer from "./MediaPlayer";
+import AutoPlay from './pluguins/AutoPlay';
+import AutoPause from './pluguins/AutoPause';
 
 
 const video = document.querySelector('video');
-const btn_play = document.querySelector('#playButtom');
-const btn_mute = document.querySelector('#muteButtom');
+const btn_play: HTMLElement = document.querySelector('#playButtom');
+const btn_mute: HTMLElement = document.querySelector('#muteButtom');
 
 
 const player = new MediaPlayer({ 
