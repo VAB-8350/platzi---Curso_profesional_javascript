@@ -84,7 +84,7 @@ enum Color {
 
 let rect: Rectangulo = {
   ancho: 4,
-  alto:2,
+  alto:6,
   color: Color.verde,
 }
 
